@@ -1,0 +1,55 @@
+# config.yml
+# CandyReport Configuration File
+# Author: Berk AYDIN
+
+# Çoklu sunucu kurulumu için sunucu adı tanımlama
+server-name: "Lobi"
+
+# Database Ayarları
+# DATABASE OLMADAN PLUGIN CALISMAZ!
+database:
+  host: "localhost"
+  port: 3306
+  name: "candyreport"
+  username: "root"
+  password: ""
+  ssl: false
+
+# System Ayarları
+report:
+  # Oyuncu başına depolanacak maksimum mesaj sayısı
+  max-messages-to-store: 4
+  
+  # Önceden tanımlanmış rapor nedenleri (oyuncular ayrıca özel nedenler de kullanabilirler)
+  reasons:
+    - "Küfür Kullanımı"
+    - "Spam Yapma"
+    - "Toxiclik"
+    - "Uygunsuz mesaj"
+    - "Reklam"
+    - "Hile Kullanımı"
+    - "Bug Kullanımı"
+    - "Diğer"
+  
+  # Bir rapor onaylandığında yürütülecek varsayılan mute komutu
+  # Placeholders: {player} = reported player name
+  default-mute-command: "mute {player} 1d Sessize Alındınız - Rapor onaylandı"
+
+# Bildirim Ayarları
+notification:
+  sound:
+    enabled: true
+    type: "BLOCK_NOTE_BLOCK_PLING"
+    volume: 1.0
+    pitch: 1.5
+
+# Gui Ayarları
+gui:
+  title: "&8Aktif Raporlar"
+  size: 27  # Sadece (9, 18, 27, 36, 45, 54) kullanılabilir
+
+# Yetki Ayarları
+permissions:
+  report: "candyreport.report"      # Rapor oluşturma izni
+  view: "candyreport.view"          # Raporları görüntüleme izni
+  manage: "candyreport.manage"      # Raporları onaylama/reddetme izni

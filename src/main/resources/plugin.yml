@@ -1,0 +1,14 @@
+name: CandyReport
+main: com.me.candyReport.CandyReport
+version: 1.0
+author: Berk AYDIN
+api-version: 1.19
+commands:
+  rapor:
+    usage: /<command> <oyuncu> [sebep]
+    description: Oyuncu raporlama komutu
+permissions:
+  candyreport.use:
+    default: true
+  candyreport.admin:
+    default: op

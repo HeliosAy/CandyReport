@@ -1,0 +1,33 @@
+# messages.yml
+# CandyReport Mesajlar Konfigürasyonu
+
+messages:
+  # Genel mesajlar
+  no-permission: "&cBunu yapmak için izniniz yok!"
+  player-not-found: "&c'{player}' adlı oyuncu bulunamadı!"
+  cannot-report-self: "&cKendinizi raporlayamazsınız!"
+  config-reloaded: "&aYapılandırma başarıyla yenilendi!"
+
+  # Rapor mesajları
+  report-sent: "&a{player} isimli oyuncuya yaptığınız rapor yetkililere iletildi!"
+  report-failed: "&cRapor oluşturulamadı. Lütfen daha sonra tekrar deneyin."
+  report-approved: "&a{player} isimli oyuncuya yapılan rapor onaylandı ve işlem yapıldı."
+  report-rejected: "&c{player} isimli oyuncuya yapılan rapor reddedildi."
+
+  # Bildirim mesajları
+  new-report-notification: |
+    &c&l[RAPOR] &f{reported} oyuncusu &f{reporter} tarafından raporlandı
+    &cSebep: &f{reason}
+    &eRaporları incelemek için &a/rapor view &ekomutunu kullanın!
+
+  # Komut kullanımı
+  usage:
+    main: |
+      &e&lCandyReport Komutları:
+      &7/rapor <oyuncu> [sebep] &f- Bir oyuncuyu raporla
+      &7/rapor view &f- Bekleyen raporları görüntüle (Yetkili)
+      &7/rapor reload &f- Yapılandırmayı yenile (Yönetici)
+
+  # Hata mesajları
+  database-error: "&cVeritabanı hatası oluştu. Lütfen bir yönetici ile iletişime geçin."
+  unknown-error: "&cBilinmeyen bir hata oluştu. Lütfen tekrar deneyin."
