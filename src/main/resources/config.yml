@@ -1,6 +1,10 @@
 # CandyReport Configuration File
 # Author: Berk AYDIN
 
+# BungeeCord network ayarları
+bungeecord:
+  enabled: false  # true = BungeeCord üzerinden, false = sadece local yetkililere bildirim
+
 # Çoklu sunucu kurulumu için sunucu adı tanımlama
 server-name: "Lobi"
 

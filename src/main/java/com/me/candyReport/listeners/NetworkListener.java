@@ -1,6 +1,6 @@
 package com.me.candyReport.listeners;
 
-import com.me.candyReport.managers.NotificationManager;
+import com.me.candyReport.notifier.NotificationManager;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
@@ -33,9 +33,11 @@ public class NetworkListener implements PluginMessageListener {
                 reason = null;
             }
 
-            notificationManager.notifyStaff(reportedPlayer, reporter, reason);
+            // Sadece local bildirim gönder - network'e tekrar gönderme!
+            notificationManager.notifyLocalStaff(reportedPlayer, reporter, reason);
 
         } catch (IOException e) {
+            player.getServer().getLogger().severe("CandyReport NetworkListener error: " + e.getMessage());
             e.printStackTrace();
         }
     }

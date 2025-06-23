@@ -1,6 +1,9 @@
-# config.yml
 # CandyReport Configuration File
 # Author: Berk AYDIN
+
+# BungeeCord network ayarları
+bungeecord:
+  enabled: false  # true = BungeeCord üzerinden, false = sadece local yetkililere bildirim
 
 # Çoklu sunucu kurulumu için sunucu adı tanımlama
 server-name: "Lobi"
@@ -32,7 +35,8 @@ report:
     - "Diğer"
   
   # Bir rapor onaylandığında yürütülecek varsayılan mute komutu
-  # Placeholders: {player} = reported player name
+  # Placeholders:
+    # {player} = raporlanan oyuncunun adı
   default-mute-command: "mute {player} 1d Sessize Alındınız - Rapor onaylandı"
 
 # Bildirim Ayarları
@@ -47,6 +51,7 @@ notification:
 gui:
   title: "&8Aktif Raporlar"
   size: 27  # Sadece (9, 18, 27, 36, 45, 54) kullanılabilir
+  # NOT: GUI Size yanlış ayarlanırsa problemlere yol açabilir
 
 # Yetki Ayarları
 permissions:

@@ -8,7 +8,7 @@ import com.me.candyReport.listeners.ChatListener;
 import com.me.candyReport.listeners.NetworkListener;
 import com.me.candyReport.managers.ConfigManager;
 import com.me.candyReport.managers.MessageManager;
-import com.me.candyReport.managers.NotificationManager;
+import com.me.candyReport.notifier.NotificationManager;
 import com.me.candyReport.managers.ReportManager;
 import com.me.candyReport.notifier.LocalNotifier;
 import com.me.candyReport.notifier.NetworkNotifier;
@@ -37,11 +37,17 @@ public class CandyReport extends JavaPlugin {
         this.reportManager = new ReportManager(this);
         this.localNotifier = new LocalNotifier(messageManager, configManager, this);
         this.networkNotifier = new NetworkNotifier(this);
-        this.notificationManager = new NotificationManager(localNotifier, networkNotifier);
         this.messageCache = new MessageCache(this);
         this.guiManager = new GuiManager(this);
-
-
+        // BUNGEECORD OR SINGLE SERVER MOD AYARLARI
+        if (configManager.isBungeeCordEnabled()) {
+            this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+            this.getServer().getMessenger().registerIncomingPluginChannel(this, "candyreport:notification",
+                    new NetworkListener(notificationManager));
+            getLogger().info("BungeeCord integration enabled!");
+        } else {
+            getLogger().info("Running in single-server mode.");
+        }
 
         // Initialize Database
         if (!databaseManager.initialize()) {
@@ -56,14 +62,10 @@ public class CandyReport extends JavaPlugin {
         // Register listeners
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
 
-        // Kaydet: BungeeCord messaging channels
-        getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-        getServer().getMessenger().registerIncomingPluginChannel(this, "candyreport:notification",
-                new NetworkListener(notificationManager));
-
         String ASCIIYELLOW = "\u001B[33m";
         String ASCIIGREEN = "\u001B[32m";
         String ASCIIRESET = "\u001B[0m";
+
 
         getLogger().info(ASCIIYELLOW + "   _____                _       _____                       _   "        + ASCIIRESET);
         getLogger().info(ASCIIYELLOW + "  / ____|              | |     |  __ \\                     | |  "       + ASCIIRESET);

@@ -55,6 +55,11 @@ public class ConfigManager {
         this.messages = YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(), "messages.yml"));
     }
 
+    // Bungeecord ayarları
+    public boolean isBungeeCordEnabled() {
+        return config.getBoolean("bungeecord.enabled", false);
+    }
+
     // Config Database ayarları
     public String getDatabaseHost() {
         return config.getString("database.host", "localhost");

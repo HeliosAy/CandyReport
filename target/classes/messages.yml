@@ -1,10 +1,8 @@
-# messages.yml
 # CandyReport Mesajlar Konfigürasyonu
 
 messages:
   # Genel mesajlar
   no-permission: "&cBunu yapmak için izniniz yok!"
-  player-not-found: "&c'{player}' adlı oyuncu bulunamadı!"
   cannot-report-self: "&cKendinizi raporlayamazsınız!"
   config-reloaded: "&aYapılandırma başarıyla yenilendi!"
 

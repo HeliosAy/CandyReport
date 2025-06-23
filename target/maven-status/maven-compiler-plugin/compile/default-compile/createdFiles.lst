@@ -20,8 +20,8 @@ com\me\candyReport\gui\GuiManager.class
 com\me\candyReport\database\repository\ReportRepository$LocalDateTimeAdapter.class
 com\me\candyReport\notifier\LocalNotifier.class
 com\me\candyReport\models\Report.class
+com\me\candyReport\notifier\NotificationManager.class
 com\me\candyReport\gui\GuiManager$1.class
 com\me\candyReport\listeners\ChatListener.class
 com\me\candyReport\models\StoredMessage.class
-com\me\candyReport\managers\NotificationManager.class
 com\me\candyReport\database\repository\ReportRepository$1.class

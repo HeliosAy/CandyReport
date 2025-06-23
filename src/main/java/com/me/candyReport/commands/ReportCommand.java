@@ -91,11 +91,6 @@ public class ReportCommand implements CommandExecutor, TabCompleter {
         String targetName = args[0];
         Player targetPlayer = Bukkit.getPlayer(targetName);
 
-        if (targetPlayer == null) {
-            player.sendMessage(plugin.getMessageManager().getMessage("player-not-found",
-                    "{player}", targetName));
-            return;
-        }
 
         if (targetPlayer.equals(player)) {
             player.sendMessage(plugin.getMessageManager().getMessage("cannot-report-self"));
