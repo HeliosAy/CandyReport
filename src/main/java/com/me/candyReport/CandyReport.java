@@ -37,8 +37,10 @@ public class CandyReport extends JavaPlugin {
         this.reportManager = new ReportManager(this);
         this.localNotifier = new LocalNotifier(messageManager, configManager, this);
         this.networkNotifier = new NetworkNotifier(this);
+        this.notificationManager = new NotificationManager(localNotifier, networkNotifier, configManager);
         this.messageCache = new MessageCache(this);
         this.guiManager = new GuiManager(this);
+
         // BUNGEECORD OR SINGLE SERVER MOD AYARLARI
         if (configManager.isBungeeCordEnabled()) {
             this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
@@ -65,8 +67,6 @@ public class CandyReport extends JavaPlugin {
         String ASCIIYELLOW = "\u001B[33m";
         String ASCIIGREEN = "\u001B[32m";
         String ASCIIRESET = "\u001B[0m";
-
-
         getLogger().info(ASCIIYELLOW + "   _____                _       _____                       _   "        + ASCIIRESET);
         getLogger().info(ASCIIYELLOW + "  / ____|              | |     |  __ \\                     | |  "       + ASCIIRESET);
         getLogger().info(ASCIIYELLOW + " | |     __ _ _ __   __| |_   _| |__) |___ _ __   ___  _ __| |_ "        + ASCIIRESET);
@@ -75,10 +75,8 @@ public class CandyReport extends JavaPlugin {
         getLogger().info(ASCIIYELLOW + "  \\_____\\__,_|_| |_|\\__,_|\\__, |_|  \\_\\___| .__/ \\___/|_|   \\__|"+ ASCIIRESET);
         getLogger().info(ASCIIYELLOW + "                           __/ |          | |                   "        + ASCIIRESET);
         getLogger().info(ASCIIYELLOW + "                          |___/           |_|                   "        + ASCIIRESET);
-
         getLogger().info(ASCIIGREEN + "CandyReport plugin has been enabled!"      + ASCIIRESET);
         getLogger().info(ASCIIGREEN + "BungeeCord messaging channels registered!" + ASCIIRESET);
-
     }
 
     @Override

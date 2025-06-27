@@ -107,10 +107,8 @@ public class ReportDetailGui extends BaseGui {
         } else {
             player.sendMessage("§cKaydedilmiş mesaj bulunmuyor.");
         }
-
         player.sendMessage("");
         player.sendMessage("§8§l=====================================");
-        player.sendMessage("");
     }
 
     private void setupActionButtons() {
