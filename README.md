@@ -213,7 +213,7 @@ messages:
 
 ## 📄 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır.
+Bu proje GPLv3 lisansı altında lisanslanmıştır.
 
 ---
 
